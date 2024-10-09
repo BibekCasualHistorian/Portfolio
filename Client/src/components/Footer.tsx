@@ -8,7 +8,11 @@ import {
 } from "react-icons/fa";
 
 const socialLinks = [
-  { icon: <FaGithub size={28} />, url: "https://github.com", name: "GitHub" },
+  {
+    icon: <FaGithub size={28} />,
+    url: "https://github.com/BibekCasualHistorian",
+    name: "GitHub",
+  },
   {
     icon: <FaLinkedin size={28} />,
     url: "https://linkedin.com",
@@ -35,7 +39,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900  text-white p-8 pt-14">
+    <footer className="bg-gray-600  text-white p-8 pt-14">
       <div className="flex flex-col justify-start md:flex-row gap-7    px-4">
         <div className="flex-1  space-y-3 order-2 md:order-1">
           <h2 className="text-2xl font-semibold">Bibek Koirala</h2>

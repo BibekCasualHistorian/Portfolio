@@ -63,11 +63,10 @@ const Projects = () => {
     <WithComponentHeader id="projects" header="Projects">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {projectsData.map((each: Project, index: number) => {
-          console.log("each", each);
           return (
             <div
               key={index}
-              className="border bg-gray-50 border-black space-y-3 p-6 rounded-3xl "
+              className="boder-primary-borderLight dark:borer-primary-borderDark border-2 bg-gray-100  space-y-3 p-6 rounded-3xl "
             >
               <img src="public/my-photo.jpg" alt="" className="rounded-3xl" />
               <h1 className="text-center text-2xl font-semibold ">
@@ -76,13 +75,16 @@ const Projects = () => {
               <div className="flex justify-evenly">
                 <button
                   disabled
-                  className="p-2 px-6 text-sm border border-black rounded-3xl"
+                  className="p-2 px-6 text-sm border bg-theme-dark  text-primaryText-dark  border-none font-semibold  rounded-3xl"
                 >
-                  Github
+                  <a href={each.githubUrl} className="text-inherit">
+                    {" "}
+                    Github
+                  </a>
                 </button>
                 <button
                   disabled
-                  className="p-2 px-6 text-sm border border-black rounded-3xl"
+                  className="disabled:opacity-75 p-2 px-6 text-sm border border-black font-semibold rounded-3xl"
                 >
                   Live Demo
                 </button>

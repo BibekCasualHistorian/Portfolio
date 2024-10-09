@@ -25,7 +25,7 @@ const experienceData = [
 
 const Experience = () => {
   return (
-    <WithComponentHeader header="Experience">
+    <WithComponentHeader id="experience" header="Experience">
       <div className="py-10">
         {experienceData.map((experience, index) => (
           <div key={index} className="mb-8">

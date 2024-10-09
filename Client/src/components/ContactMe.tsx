@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import WithComponentHeader from "./WithComponentHeader";
 import { AiFillEnvironment, AiFillMail, AiFillPhone } from "react-icons/ai";
+import Toast from "./Toast";
 
 interface ContactDetail {
   icon: JSX.Element;
@@ -10,48 +11,89 @@ interface ContactDetail {
 const contactDetails: ContactDetail[] = [
   {
     icon: <AiFillMail size={30} className="text-gray-500" />,
-    text: "email@example.com",
+    text: "www.koiralabibek2058@gmail.com",
   },
   {
     icon: <AiFillPhone size={30} className="text-gray-500" />,
-    text: "+1234567890",
+    text: "+9779841158113",
   },
   {
     icon: <AiFillEnvironment size={30} className="text-gray-500" />,
-    text: "123 Main St, City, Country",
+    text: "Begnastal, Kaski-31, Nepal",
   },
 ];
 
 const ContactMe = () => {
   const [name, setName] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [toastVisible, setToastVisible] = useState<boolean>(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = { name, email, message }; // Prepare data to send to the backend
-    console.log(formData); // Log or send to the backend
-    // Clear form after submission
+    setLoading(true);
+
+    const response = await fetch("http://localhost:3000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, message, username: name }),
+    });
+    const data = await response.json();
+    console.log("data", data);
+    if (response.ok) {
+      setToastMessage(data.message || "Message sent successfully!"); // Set success toast message
+    } else {
+      setToastMessage(
+        data.message || "Failed to send message. Please try again."
+      ); // Set error toast message
+    }
+    setLoading(false);
+    setToastVisible(true); // Show toast
     setName("");
     setEmail("");
     setMessage("");
   };
 
+  const handleToastClose = () => {
+    setTimeout(() => {
+      setToastVisible(false); // Hide toast
+    }, 5000);
+  };
+
   return (
     <WithComponentHeader id="contact-me" header="Let's get in Touch">
+      {toastVisible &&
+        toastMessage && ( // Conditionally render the Toast component
+          <Toast message={toastMessage} onClose={handleToastClose} />
+        )}
       <div className="flex gap-3 flex-col md:flex-row">
         <div className="flex-1 space-y-3">
-          <h1 className="text-4xl ">Let's talk</h1>
-          <p className=" text-xl">
+          <h1 className="text-4xl text-primaryText-light dark:text-primaryText-dark ">
+            Let's talk
+          </h1>
+          <p className=" text-xl text-secondaryText-light dark:text-secondaryText-dark">
             I'm currently available to take on new projects, so feel free to
             send me a meesage about anything that you want me to work on. Feel
             free to Contact me by submitting the form below and I will get back
             to you as soon as possible
           </p>
-          <div className="text-xl ">
+          <div className="text-xl text-tertiaryText-light dark:text-tertiaryText-dark ">
             {contactDetails.map((detail, index) => (
-              <section key={index} className="flex items-center">
-                {detail.icon}
-                <h1 className="flex items-center p-2">: {detail.text}</h1>
+              <section
+                key={index}
+                className="flex items-center overflow-hidden whitespace-nowrap"
+              >
+                <span>{detail.icon}</span>
+                <h1
+                  className="flex items-center p-2"
+                  title={index == 0 ? "Yes it has www" : ""}
+                >
+                  : {detail.text}
+                </h1>
               </section>
             ))}
           </div>
@@ -59,7 +101,10 @@ const ContactMe = () => {
         <div className="flex-1 p-4 ">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-primaryText-light dark:text-primaryText-dark"
+              >
                 Name
               </label>
               <input
@@ -75,7 +120,10 @@ const ContactMe = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-primaryText-light dark:text-primaryText-dark"
+              >
                 Email
               </label>
               <input
@@ -91,7 +139,10 @@ const ContactMe = () => {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-primaryText-light dark:text-primaryText-dark"
+              >
                 Message
               </label>
               <textarea
@@ -109,9 +160,12 @@ const ContactMe = () => {
             <div>
               <button
                 type="submit"
-                className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition"
+                disabled={
+                  loading || !message.length || !email.length || !name.length
+                }
+                className="disabled:opacity-75 w-full bg-primary-light dark:bg-primary-dark text-primary-textLight dark:text-primary-textDark font-semibold py-2 rounded-md  transition"
               >
-                Submit Now
+                {loading ? "Sending..." : "Submit Now"}
               </button>
             </div>
           </form>

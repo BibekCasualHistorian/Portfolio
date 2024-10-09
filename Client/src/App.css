@@ -1,3 +1,26 @@
 html {
   scroll-behavior: smooth;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gradient-primary: theme("colors.purple.500");
+    --gradient-secondary: theme("colors.pink.500");
+    --gradient-tertiary: theme("colors.indigo.500");
+  }
+
+  .theme-blue {
+    --gradient-primary: theme("colors.blue.500");
+    --gradient-secondary: theme("colors.cyan.500");
+    --gradient-tertiary: theme("colors.sky.500");
+  }
+
+  .theme-green {
+    --gradient-primary: theme("colors.emerald.500");
+    --gradient-secondary: theme("colors.green.500");
+    --gradient-tertiary: theme("colors.lime.500");
+  }
+}

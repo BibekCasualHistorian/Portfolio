@@ -12,23 +12,22 @@ const AboutPage = () => {
                 alt="Professional headshot"
                 className="rounded-2xl object-cover shadow-xl h-full"
               />
-              <div className="absolute -z-10 top-8 -left-8 w-full h-full bg-purple-100 rounded-2xl"></div>
-              <div className="absolute -z-20 -top-8 -right-8 w-full h-full bg-blue-50 rounded-2xl"></div>
+              {/* <div className="absolute -z-10 top-8 -left-8 w-full h-full bg-purple-100 rounded-2xl"></div> */}
+              <div className="absolute -z-10 top-8 -left-8 w-full h-full bg-gray-100 rounded-2xl"></div>
+              {/* <div className="absolute -z-20 -top-8 -right-8 w-full h-full bg-blue-50 rounded-2xl"></div> */}
+              <div className="absolute -z-20 -top-8 -right-8 w-full h-full bg-gray-100 rounded-2xl"></div>
             </div>
           </div>
 
           <div className="space-y-6">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold text-gray-900">
+              <h2 className="text-3xl text-primaryText-light dark:text-primaryText-dark font-bold ">
                 Full Stack Developer
               </h2>
-              <p className="text-lg text-purple-600 font-medium">
-                Turning ideas into reality through code
-              </p>
             </div>
 
-            <div className="space-y-4 text-gray-600">
-              <p>
+            <div className="text-secondaryText-light dark:text-secondaryText-dark space-y-4 ">
+              <p className="" style={{ lineHeight: "1.5" }}>
                 Hello! I'm a passionate MERN (MongoDB, Express.js, React.js,
                 Node.js) stack developer with a keen eye for creating seamless
                 web applications. With expertise in both frontend and backend
@@ -52,8 +51,8 @@ const AboutPage = () => {
 
               <div className="pt-4">
                 <a
-                  href="#contact"
-                  className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors"
+                  href="#contact-me"
+                  className="inline-flex items-center px-6 py-3 bg-primary-light dark:bg-primary-dark text-primary-textLight dark:text-primary-textDark font-medium rounded-lg  transition-colors"
                 >
                   Let's Work Together
                 </a>

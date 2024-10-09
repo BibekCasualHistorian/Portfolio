@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
@@ -8,10 +9,20 @@ import Projects from "./components/Projects";
 import SkillsExperiences from "./components/Skills&Experience";
 
 function App() {
+  const [theme, setTheme] = useState<"dark" | "light">("light");
+
+  const handleTheme = () => {
+    console.log("handleTheme", theme);
+    setTheme((prevState) => {
+      return prevState === "light" ? "dark" : "light";
+    });
+    document.documentElement.classList.toggle("dark");
+  };
+
   return (
-    <div>
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
+    <div className={theme == "dark" ? "bg-theme-dark" : "bg-theme-light"}>
+      <div className={` min-h-screen flex flex-col`}>
+        <Navbar theme={theme} handleTheme={handleTheme} />
         <Main />
       </div>
       <AboutMe />

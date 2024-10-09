@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://portfolio-ubp6.onrender.com"],
+    origin: ["https://portfolio-frontend-pikm.onrender.com"],
     methods: ["GET", "POST", "PUT", "DELETE"], // Define the methods you want to allow
     credentials: true, // If your frontend and backend share cookies, enable this
   })

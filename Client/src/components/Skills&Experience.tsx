@@ -80,7 +80,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill, isColorMode }) => (
       }`}
     >
       <img
-        src={`${skill.imagePath}`}
+        src={`https://portfolio-frontend-pikm.onrender.com/${skill.imagePath}`}
         alt={skill.name}
         className=" object-contain h-12 w-12 hover:w-14 hover:h-14 transition-all delay-150 ease-in "
         color={skill.color}

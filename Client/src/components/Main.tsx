@@ -3,7 +3,7 @@ const Main = () => {
     <main className="flex-1 flex gap-7 md:gap-7  md:flex-row flex-col">
       <div className="flex-1  flex justify-center md:justify-end items-center ">
         <img
-          src="public/my-photo.jpg"
+          src="https://portfolio-frontend-pikm.onrender.com/public/my-photo.jpg"
           className="rounded-full  w-[200px] md:w-[300px] md:h-[300px] mt-auto md:mt-0  h-[200px] object-cover"
           alt="real"
         />

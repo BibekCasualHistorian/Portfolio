@@ -69,7 +69,7 @@ const Projects = () => {
               className="boder-primary-borderLight dark:borer-primary-borderDark border-2 bg-gray-100  space-y-3 p-6 rounded-3xl "
             >
               <img
-                src="https://portfolio-frontend-pikm.onrender.com/public/my-photo.jpg"
+                src="https://portfolio-frontend-pikm.onrender.com/my-photo.jpg"
                 alt=""
                 className="rounded-3xl"
               />

@@ -35,7 +35,7 @@ const ContactMe = () => {
     e.preventDefault();
     setLoading(true);
 
-    const response = await fetch("http://localhost:3000/contact", {
+    const response = await fetch("https://portfolio-ubp6.onrender.com/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

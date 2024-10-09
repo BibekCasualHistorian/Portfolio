@@ -8,7 +8,7 @@ const AboutPage = () => {
           <div className="hidden lg:block">
             <div className="relative aspect-square w-full max-w-md mx-auto">
               <img
-                src="public/my-photo.jpg"
+                src="https://portfolio-frontend-pikm.onrender.com/my-photo.jpg"
                 alt="Professional headshot"
                 className="rounded-2xl object-cover shadow-xl h-full"
               />

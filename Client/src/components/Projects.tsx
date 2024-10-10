@@ -36,7 +36,7 @@ const projectsData: Project[] = [
   {
     id: 4,
     title: "Movie App",
-    imageUrl: "Movie--With-Redux-pictureone.jpg",
+    imageUrl: "Movie-With-Redux-pictureone.jpg",
     githubUrl: "https://github.com/username/social-dashboard",
     liveDemoUrl: "https://social-dashboard-demo.com",
     isLiveDemoDisabled: false,
@@ -56,7 +56,7 @@ const Projects = () => {
               <img
                 src={`https://portfolio-frontend-pikm.onrender.com/${each.imageUrl}`}
                 alt=""
-                className="rounded-3xl"
+                className="rounded-3xl min-h-[220px] object-cover"
               />
               <h1 className="text-center text-2xl font-semibold ">
                 {each.title}

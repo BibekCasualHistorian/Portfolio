@@ -12,49 +12,34 @@ interface Project {
 const projectsData: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    imageUrl: "/projects/e-commerce.jpg",
+    title: "Effix",
+    imageUrl: "Effix-pictureone.jpg",
     githubUrl: "https://github.com/username/e-commerce",
     liveDemoUrl: "https://e-commerce-demo.com",
     isLiveDemoDisabled: false,
   },
   {
     id: 2,
-    title: "Weather Dashboard",
-    imageUrl: "/projects/weather-app.jpg",
+    title: "Blog App",
+    imageUrl: "Blog-pictureone.jpg",
     githubUrl: "https://github.com/username/weather-app",
     liveDemoUrl: "https://weather-dashboard-demo.com",
     isLiveDemoDisabled: false,
   },
   {
     id: 3,
-    title: "Task Management App",
-    imageUrl: "/projects/task-manager.jpg",
+    title: "Chat",
+    imageUrl: "Chat-pictureone.jpg",
     githubUrl: "https://github.com/username/task-manager",
     isLiveDemoDisabled: true,
   },
   {
     id: 4,
-    title: "Social Media Dashboard",
-    imageUrl: "/projects/social-dashboard.jpg",
+    title: "Movie App",
+    imageUrl: "Movie--With-Redux-pictureone.jpg",
     githubUrl: "https://github.com/username/social-dashboard",
     liveDemoUrl: "https://social-dashboard-demo.com",
     isLiveDemoDisabled: false,
-  },
-  {
-    id: 5,
-    title: "Portfolio Website",
-    imageUrl: "/projects/portfolio.jpg",
-    githubUrl: "https://github.com/username/portfolio",
-    liveDemoUrl: "https://portfolio-demo.com",
-    isLiveDemoDisabled: false,
-  },
-  {
-    id: 6,
-    title: "Chat Application",
-    imageUrl: "/projects/chat-app.jpg",
-    githubUrl: "https://github.com/username/chat-app",
-    isLiveDemoDisabled: true,
   },
 ];
 
@@ -69,12 +54,12 @@ const Projects = () => {
               className="boder-primary-borderLight dark:borer-primary-borderDark border-2 bg-gray-100  space-y-3 p-6 rounded-3xl "
             >
               <img
-                src="https://portfolio-frontend-pikm.onrender.com/my-photo.jpg"
+                src={`https://portfolio-frontend-pikm.onrender.com/${each.imageUrl}`}
                 alt=""
                 className="rounded-3xl"
               />
               <h1 className="text-center text-2xl font-semibold ">
-                Project One
+                {each.title}
               </h1>
               <div className="flex justify-evenly">
                 <button

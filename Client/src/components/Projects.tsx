@@ -14,7 +14,7 @@ const projectsData: Project[] = [
     id: 1,
     title: "Effix",
     imageUrl: "Effix-pictureone.jpg",
-    githubUrl: "https://github.com/username/e-commerce",
+    githubUrl: "https://github.com/BibekCasualHistorian/Effix",
     liveDemoUrl: "https://e-commerce-demo.com",
     isLiveDemoDisabled: false,
   },
@@ -22,7 +22,7 @@ const projectsData: Project[] = [
     id: 2,
     title: "Blog App",
     imageUrl: "Blog-pictureone.jpg",
-    githubUrl: "https://github.com/username/weather-app",
+    githubUrl: "https://github.com/BibekCasualHistorian/MERN-Blog",
     liveDemoUrl: "https://weather-dashboard-demo.com",
     isLiveDemoDisabled: false,
   },
@@ -30,14 +30,14 @@ const projectsData: Project[] = [
     id: 3,
     title: "Chat",
     imageUrl: "Chat-pictureone.jpg",
-    githubUrl: "https://github.com/username/task-manager",
+    githubUrl: "https://github.com/BibekCasualHistorian/MERN-ChatApp-simple",
     isLiveDemoDisabled: true,
   },
   {
     id: 4,
     title: "Movie App",
     imageUrl: "Movie-With-Redux-pictureone.jpg",
-    githubUrl: "https://github.com/username/social-dashboard",
+    githubUrl: "https://github.com/BibekCasualHistorian/Movie-with-Redux",
     liveDemoUrl: "https://social-dashboard-demo.com",
     isLiveDemoDisabled: false,
   },
@@ -66,7 +66,11 @@ const Projects = () => {
                   disabled
                   className="p-2 px-6 text-sm border bg-theme-dark  text-primaryText-dark  border-none font-semibold  rounded-3xl"
                 >
-                  <a href={each.githubUrl} className="text-inherit">
+                  <a
+                    href={each.githubUrl}
+                    target="_blank"
+                    className="text-inherit"
+                  >
                     {" "}
                     Github
                   </a>

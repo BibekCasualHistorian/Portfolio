@@ -30,18 +30,13 @@ interface SkillsExperiencesProps {
 }
 
 const skillsData: Skill[] = [
-  { name: "Flutter", color: "#54C5F8", imagePath: "/flutter.png" },
-  {
-    name: "Redux",
-    color: "#764ABC",
-    imagePath: "/redux.png",
-  },
+  // { name: "Flutter", color: "#54C5F8", imagePath: "/flutter.png" },
   { name: "HTML5", color: "#E34F26", imagePath: "/html5.png" },
-  { name: "Vue", color: "#4FC08D", imagePath: "/vue.png" },
+  { name: "CSS3", color: "#1572B6", imagePath: "/css.png" },
   {
-    name: "TypeScript",
-    color: "#3178C6",
-    imagePath: "/typescript.png",
+    name: "JavaScript",
+    color: "#F7DF1E",
+    imagePath: "/javascript.png",
   },
   { name: "Node.js", color: "#339933", imagePath: "/node.png" },
   {
@@ -49,16 +44,21 @@ const skillsData: Skill[] = [
     color: "#61DAFB",
     imagePath: "/react.png",
   },
-  { name: "CSS3", color: "#1572B6", imagePath: "/css.png" },
+  {
+    name: "Redux",
+    color: "#764ABC",
+    imagePath: "/redux.png",
+  },
+  { name: "Vue", color: "#4FC08D", imagePath: "/vue.png" },
+  {
+    name: "TypeScript",
+    color: "#3178C6",
+    imagePath: "/typescript.png",
+  },
   {
     name: "GraphQL",
     color: "#E10098",
     imagePath: "/graphql.png",
-  },
-  {
-    name: "JavaScript",
-    color: "#F7DF1E",
-    imagePath: "/javascript.png",
   },
   { name: "Git", color: "#F05032", imagePath: "/git.png" },
 ];

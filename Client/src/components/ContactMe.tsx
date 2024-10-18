@@ -35,13 +35,16 @@ const ContactMe = () => {
     e.preventDefault();
     setLoading(true);
 
-    const response = await fetch("https://portfolio-ubp6.onrender.com/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, message, username: name }),
-    });
+    const response = await fetch(
+      "https://portfolio-ubp6.onrender.com/contact",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, message, username: name }),
+      }
+    );
     const data = await response.json();
     console.log("data", data);
     if (response.ok) {
@@ -66,10 +69,9 @@ const ContactMe = () => {
 
   return (
     <WithComponentHeader id="contact-me" header="Let's get in Touch">
-      {toastVisible &&
-        toastMessage && ( // Conditionally render the Toast component
-          <Toast message={toastMessage} onClose={handleToastClose} />
-        )}
+      {toastVisible && toastMessage && (
+        <Toast message={toastMessage} onClose={handleToastClose} />
+      )}
       <div className="flex gap-3 flex-col md:flex-row">
         <div className="flex-1 space-y-3">
           <h1 className="text-4xl text-primaryText-light dark:text-primaryText-dark ">
